@@ -26,13 +26,23 @@ def askInput():
 def executeCommand(string):
     command = string.lower()
     if command == "help":
-        print "hellpppppppp"
+        print
+        print "[*] Github CLI Tool help page"
+        print "help - show this"
+        print "info - show url's"
+        print "events - shows all events"
+        print "gists - get list of gists"
+        print
     elif (command == "get_info" or command == "info"):
         github_network.getInfo()
+    elif (command == "get_events" or command == "events"):
+        github_network.getEvents()
+    elif (command == "gists"):
+        github_network.getGists()
     elif (command == "exit" or command == "quit"):
         quit()
     else:
-        print ""+command+" not found"
+        print "github: "+command+" not found"
         
     askInput()    
     
